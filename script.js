@@ -22,19 +22,11 @@ const playRound = (computerSelection, playerSelection) => {
 
   if (playerIndex === computerIndex) return "DRAW";
 
-  return `You ${isPlayerWinner ? "win" : "Lost"}! ${
-    isPlayerWinner ? playerSelection : computerSelection
-  } beats ${
-    isPlayerWinner ? computerSelection : playerSelection
-  }. You choose ${playerSelection}.`;
-};
+  if (isPlayerWinner)
+    return `You Won! ${playerSelection} beats ${computerSelection}`;
 
-// console.log(playRound("rock", "scissors")); //f;
-// console.log(playRound("scissors", "rock")); // t
-// console.log(playRound("rock", "paper")); // t
-// console.log(playRound("paper", "rock")); // f
-// console.log(playRound("scissors", "paper")); // f
-// console.log(playRound("paper", "scissors")); // t
+  return `You lost! ${computerSelection} beats ${playerSelection}`;
+};
 
 const game = () => {
   for (let i = 1; i <= 5; i++) {
