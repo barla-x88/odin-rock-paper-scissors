@@ -1,12 +1,16 @@
 "use strict";
 
+//avilable options that can be choosen
 const optionsArray = ["rock", "scissors", "paper"];
 
+//return an interger between given range including max and min
 const getRandomNumber = (max, min) =>
   Math.round(Math.random() * (max - min)) + min;
 
+//returns random choice from optionsArray
 const getComputerChoice = () => optionsArray[getRandomNumber(2, 0)];
 
+//determines winner
 const playRound = (computerSelection, playerSelection) => {
   playerSelection = playerSelection.toLowerCase();
 
