@@ -4,8 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background-color: rgb(27, 26, 26);
+        row-gap: 1.5rem;
+      }
+
+      .flex-container {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+      }
+
+      .flex-content {
+        border: 10px solid grey;
+        padding: 1rem;
+        box-shadow: 4px 6px 20px white;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .img {
+        max-width: 150px;
+        transition: transform 0.1s ease-in;
+      }
+
+      .img:hover {
+        transform: rotate(10deg);
+      }
+
+      .active {
+        transform: translateY(2px);
+        box-shadow: 2px 4px 10px;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      .scores {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        cursor: pointer;
+        justify-content: space-between;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      button {
+        background-color: transparent;
+      }
+
+      .show-overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.384);
+        backdrop-filter: blur(10px);
+        color: white;
+        font-size: 2rem;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+      }
+
+      #playAgain {
+        padding: 1rem;
+        background-color: white;
+        color: black;
+      }
+    </style>
   </head>
   <body>
+    <div class="scores">
+      <p>Player Score : <span id="scores-player">0</span></p>
+      <p>Computer Score: <span id="scores-computer">0</span></p>
+    </div>
+    <form class="flex-container">
+      <div class="overlay"></div>
+      <button type="button" class="flex-content" data-choice="rock">
+        <img class="img" src="img/rock-svgrepo-com.svg" alt="rock" />
+      </button>
+      <button type="button" class="flex-content" data-choice="paper">
+        <img class="img" src="img/paper-sheet-svgrepo-com.svg" alt="paper" />
+      </button>
+      <button type="button" class="flex-content" data-choice="scissors">
+        <img class="img" src="img/scissors-svgrepo-com.svg" alt="scissors" />
+      </button>
+    </form>
+    <div class="flex-container">
+      <h1 id="result-container">Choose an Option</h1>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
